@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2017 Nike, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.nike.cerberus.springboot;
+
+import com.nike.cerberus.client.DefaultCerberusClientFactory;
+import com.nike.vault.client.VaultClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Spring configuration class that provides a VaultClient for interacting with Cerberus.
+ * <p>
+ * This class is configured via {@link CerberusClientSpringBootProperties} which has
+ * one required setting for accessing Cerberus, e.g. in your {@code application.properties}:
+ * <pre>
+ *     cerberus.url=https://test.cerberus.example.com
+ * </pre>
+ *
+ * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
+ */
+@Configuration
+@EnableConfigurationProperties(CerberusClientSpringBootProperties.class)
+public class CerberusClientSpringBootConfiguration {
+
+    private CerberusClientSpringBootProperties cerberusClientProperties;
+
+    @Autowired
+    public CerberusClientSpringBootConfiguration(CerberusClientSpringBootProperties cerberusClientProperties) {
+        this.cerberusClientProperties = cerberusClientProperties;
+    }
+
+    /**
+     * Instantiate a VaultClient.
+     *
+     * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
+     */
+    @Bean
+    public VaultClient vaultClient() {
+        String url = cerberusClientProperties.getUrl();
+        if (url == null || url.isEmpty()) {
+            throw new IllegalArgumentException("cerberus.url setting is required! " +
+                    "E.g. Your application needs a configuration property like 'cerberus.url=https://test.cerberus.example.com'");
+        }
+        return DefaultCerberusClientFactory.getClient(url);
+    }
+}
