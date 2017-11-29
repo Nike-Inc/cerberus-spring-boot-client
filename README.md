@@ -1,6 +1,6 @@
 # Cerberus Spring Boot Client
 
-[ ![Download](https://api.bintray.com/packages/nike/maven/cerberus-sprint-boot-client/images/download.svg) ](https://bintray.com/nike/maven/cerberus-spring-boot-client/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/nike/maven/cerberus-spring-boot-client/images/download.svg) ](https://bintray.com/nike/maven/cerberus-spring-boot-client/_latestVersion)
 [![][travis img]][travis]
 [![Coverage Status](https://coveralls.io/repos/github/Nike-Inc/cerberus-spring-boot-client/badge.svg?branch=master)](https://coveralls.io/github/Nike-Inc/cerberus-spring-boot-client)
 [![][license img]][license]
