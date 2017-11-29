@@ -46,6 +46,7 @@ bintray {
     }
 }
 
+
 task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
@@ -63,8 +64,12 @@ artifacts {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        jar(MavenPublication) {
             from components.java
+
+            artifact sourcesJar
+            artifact javadocJar
+
         }
     }
 }
