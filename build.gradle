@@ -27,6 +27,7 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 apply from: file('gradle/dependencies.gradle')
+apply from: file('gradle/check.gradle')
 apply from: file('gradle/bintray.gradle')
 
 group = groupId
