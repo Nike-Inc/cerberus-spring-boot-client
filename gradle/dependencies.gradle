@@ -25,7 +25,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-autoconfigure:1.5.2.RELEASE"
 
     // Cerberus dependencies
-    compile "com.nike:cerberus-client:4.0.4"
+    compile "com.nike:cerberus-client:4.2.0"
     compile "com.nike:vault-client:2.0.1"
 
     // Test dependencies
