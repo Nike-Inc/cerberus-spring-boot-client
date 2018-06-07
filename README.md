@@ -32,10 +32,10 @@ To learn more about Cerberus, please see the [Cerberus website](http://engineeri
 6. Access secrets from Cerberus using Java client
 ``` java
     @Autowired
-    VaultClient vaultClient;
+    CerberusClient cerberusClient;
     
     String path = "/app/my-sdb-name"; // path from Cerberus dashboard
-    Map<String,String> secrets = vaultClient.read(path).getData();
+    Map<String,String> secrets = cerberusClient.read(path).getData();
     String secret = secrets.get("propname");  // property name from Cerberus dashboard
 ```
 
