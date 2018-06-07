@@ -22,7 +22,7 @@ public class CerberusClientSpringBootConfigurationTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testForExceptionOnMissingRequiredProperty() throws Exception {
-        new CerberusClientSpringBootConfiguration(new CerberusClientSpringBootProperties()).vaultClient();
+        new CerberusClientSpringBootConfiguration(new CerberusClientSpringBootProperties()).cerberusClient();
     }
 
 }
