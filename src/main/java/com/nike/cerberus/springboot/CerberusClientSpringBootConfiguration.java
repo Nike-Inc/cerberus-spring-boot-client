@@ -16,8 +16,8 @@
 
 package com.nike.cerberus.springboot;
 
+import com.nike.cerberus.client.CerberusClient;
 import com.nike.cerberus.client.DefaultCerberusClientFactory;
-import com.nike.vault.client.VaultClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -51,7 +51,7 @@ public class CerberusClientSpringBootConfiguration {
      * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
      */
     @Bean
-    public VaultClient vaultClient() {
+    public CerberusClient cerberusClient() {
         String url = cerberusClientProperties.getUrl();
         if (url == null || url.isEmpty()) {
             throw new IllegalArgumentException("cerberus.url setting is required! " +
