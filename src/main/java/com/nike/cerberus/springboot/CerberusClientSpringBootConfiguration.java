@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Spring configuration class that provides a VaultClient for interacting with Cerberus.
+ * Spring configuration class that provides a CerberusClient for interacting with Cerberus.
  * <p>
  * This class is configured via {@link CerberusClientSpringBootProperties} which has
  * one required setting for accessing Cerberus, e.g. in your {@code application.properties}:
@@ -46,7 +46,7 @@ public class CerberusClientSpringBootConfiguration {
     }
 
     /**
-     * Instantiate a VaultClient.
+     * Instantiate a CerberusClient.
      *
      * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
      */
