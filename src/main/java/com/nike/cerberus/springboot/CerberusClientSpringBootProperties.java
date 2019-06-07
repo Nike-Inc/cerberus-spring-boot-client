@@ -22,9 +22,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * A {@link ConfigurationProperties} companion for {@link CerberusClientSpringBootProperties}.
  * <p>
- * This class has one required setting for accessing Cerberus, e.g. in your {@code application.properties}:
+ * This class has two required settings for accessing Cerberus, e.g. in your {@code application.properties}:
  * <pre>
  *     cerberus.url=https://test.cerberus.example.com
+ *     cerberus.region=us-west-2
  * </pre>
  *
  * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
@@ -33,6 +34,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class CerberusClientSpringBootProperties {
 
     private String url;
+    private String region;
 
     /**
      * Cerberus URL, e.g. https://test.cerberus.example.com
@@ -46,5 +48,19 @@ public class CerberusClientSpringBootProperties {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * Cerberus region for sts auth, e.g. us-west-2
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    /**
+     * Cerberus region for sts auth, e.g. us-west-2
+     */
+    public void setRegion(String region) {
+        this.region = region;
     }
 }
