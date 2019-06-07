@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Nike, Inc.
+ * Copyright (c) 2019 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,10 @@ import org.springframework.context.annotation.Configuration;
  * Spring configuration class that provides a CerberusClient for interacting with Cerberus.
  * <p>
  * This class is configured via {@link CerberusClientSpringBootProperties} which has
- * one required setting for accessing Cerberus, e.g. in your {@code application.properties}:
+ * two required settings for accessing Cerberus, e.g. in your {@code application.properties}:
  * <pre>
  *     cerberus.url=https://test.cerberus.example.com
+ *     cerberus.region=us-west-2
  * </pre>
  *
  * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
@@ -53,10 +54,14 @@ public class CerberusClientSpringBootConfiguration {
     @Bean
     public CerberusClient cerberusClient() {
         String url = cerberusClientProperties.getUrl();
+        String region = cerberusClientProperties.getRegion();
         if (url == null || url.isEmpty()) {
             throw new IllegalArgumentException("cerberus.url setting is required! " +
                     "E.g. Your application needs a configuration property like 'cerberus.url=https://test.cerberus.example.com'");
+        } else if (region == null || region.isEmpty()) {
+            throw new IllegalArgumentException("cerberus.region setting is required! " +
+                    "E.g. Your application needs a configuration property like 'cerberus.region=us-west-2'");
         }
-        return DefaultCerberusClientFactory.getClient(url);
+        return DefaultCerberusClientFactory.getClient(url, region);
     }
 }

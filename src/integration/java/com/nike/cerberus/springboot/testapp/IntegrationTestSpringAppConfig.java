@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-repositories {
-    jcenter()
+package com.nike.cerberus.springboot.testapp;
+
+import com.nike.cerberus.springboot.CerberusClientSpringBootConfiguration;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+
+@Slf4j
+@Configuration
+@Import(CerberusClientSpringBootConfiguration.class)
+public class IntegrationTestSpringAppConfig {
+  public IntegrationTestSpringAppConfig() {
+    log.info("IntegrationTestSpringAppConfig Loaded");
+  }
 }
-
-//noinspection GroovyAssignabilityCheck
-dependencies {
-
-    // Spring dependencies
-    compile "org.springframework.boot:spring-boot-autoconfigure:1.5.2.RELEASE"
-
-    // Cerberus dependencies
-    compile "com.nike:cerberus-client:7.0.1"
-
-    // Test dependencies
-    testRuntime 'org.slf4j:slf4j-simple:1.7.25'
-    testCompile "junit:junit:4.12"
-    testCompile ("org.mockito:mockito-core:1.10.19") {
-        exclude group: 'org.hamcrest'
-    }
-}
-
