@@ -18,9 +18,10 @@ To learn more about Cerberus, please see the [Cerberus website](http://engineeri
      When running in AWS, your application will not need this environmetal variable, instead it will automatically 
      authenticate using its IAM role. Alternatively, set a `cerberus.token` System property.
    - If you would like to test IAM authentication locally, you can do that by [assuming a role](http://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html).
-4. Configure the Cerberus URL, e.g. in your `application.properties`
+4. Configure the Cerberus URL and region, e.g. in your `application.properties`
 ```
     cerberus.url=https://test.cerberus.example.com/
+    cerberus.region=us-west-2
 ```
 5. Ensure `CerberusClientSpringBootConfiguration` is registered in your `ApplicationContext`. E.g.
 ```java
