@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Nike, Inc.
+ * Copyright (c) 2020 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,28 +23,29 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @Slf4j
 public class IntegrationTestSpringApp {
 
-  private final ApplicationContext applicationContext;
-  private boolean isRunning = true;
+    private final ApplicationContext applicationContext;
+    private boolean isRunning = true;
 
-  public ApplicationContext getApplicationContext() {
-    return applicationContext;
-  }
-
-  public void shutdown() {
-    isRunning = false;
-  }
-
-  public void run() {
-    while (isRunning) {
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        throw new RuntimeException("Sleep interrupted");
-      }
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
     }
-  }
 
-  public IntegrationTestSpringApp() {
-    applicationContext = new AnnotationConfigApplicationContext("com.nike.cerberus.springboot.testapp");
-  }
+    public void shutdown() {
+        isRunning = false;
+    }
+
+    public void run() {
+        while (isRunning) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException("Sleep interrupted");
+            }
+        }
+    }
+
+    public IntegrationTestSpringApp() {
+        applicationContext =
+                new AnnotationConfigApplicationContext("com.nike.cerberus.springboot.testapp");
+    }
 }
