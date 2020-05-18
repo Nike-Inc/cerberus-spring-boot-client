@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Nike, Inc.
+ * Copyright (c) 2020 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,21 @@
 
 package com.nike.cerberus.springboot;
 
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * A {@link ConfigurationProperties} companion for {@link CerberusClientSpringBootProperties}.
- * <p>
- * This class has two required settings for accessing Cerberus, e.g. in your {@code application.properties}:
+ *
+ * <p>This class has two required settings for accessing Cerberus, e.g. in your {@code
+ * application.properties}:
+ *
  * <pre>
  *     cerberus.url=https://test.cerberus.example.com
  *     cerberus.region=us-west-2
  * </pre>
  *
- * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick Start Guide</a>
+ * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus Quick
+ *     Start Guide</a>
  */
 @ConfigurationProperties("cerberus")
 public class CerberusClientSpringBootProperties {
@@ -36,30 +38,22 @@ public class CerberusClientSpringBootProperties {
     private String url;
     private String region;
 
-    /**
-     * Cerberus URL, e.g. https://test.cerberus.example.com
-     */
+    /** Cerberus URL, e.g. https://test.cerberus.example.com */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * Cerberus URL, e.g. https://test.cerberus.example.com
-     */
+    /** Cerberus URL, e.g. https://test.cerberus.example.com */
     public void setUrl(String url) {
         this.url = url;
     }
 
-    /**
-     * Cerberus region for sts auth, e.g. us-west-2
-     */
+    /** Cerberus region for sts auth, e.g. us-west-2 */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Cerberus region for sts auth, e.g. us-west-2
-     */
+    /** Cerberus region for sts auth, e.g. us-west-2 */
     public void setRegion(String region) {
         this.region = region;
     }

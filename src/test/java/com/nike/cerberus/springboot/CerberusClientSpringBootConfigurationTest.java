@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Nike, Inc.
+ * Copyright (c) 2020 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ public class CerberusClientSpringBootConfigurationTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testForExceptionOnMissingRequiredProperty() throws Exception {
-        new CerberusClientSpringBootConfiguration(new CerberusClientSpringBootProperties()).cerberusClient();
+        new CerberusClientSpringBootConfiguration(new CerberusClientSpringBootProperties())
+                .cerberusClient();
     }
-
 }

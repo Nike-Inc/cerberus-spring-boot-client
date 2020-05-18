@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Nike, Inc.
+ * Copyright (c) 2020 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,23 +16,22 @@
 
 package com.nike.cerberus.springboot;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import com.fieldju.commons.EnvUtils;
 import com.nike.cerberus.client.CerberusClient;
 import com.nike.cerberus.client.CerberusServerException;
 import com.nike.cerberus.client.model.CerberusListResponse;
 import com.nike.cerberus.client.model.CerberusResponse;
 import com.nike.cerberus.springboot.testapp.IntegrationTestSpringApp;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.*;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.*;
 
 public class CerberusSpringBootClientIntegrationTests {
 

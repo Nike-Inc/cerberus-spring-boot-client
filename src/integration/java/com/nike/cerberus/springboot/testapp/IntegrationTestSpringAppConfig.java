@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Nike, Inc.
+ * Copyright (c) 2020 Nike, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import(CerberusClientSpringBootConfiguration.class)
 public class IntegrationTestSpringAppConfig {
-  public IntegrationTestSpringAppConfig() {
-    log.info("IntegrationTestSpringAppConfig Loaded");
-  }
+    public IntegrationTestSpringAppConfig() {
+        log.info("IntegrationTestSpringAppConfig Loaded");
+    }
 }
