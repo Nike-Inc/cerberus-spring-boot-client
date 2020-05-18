@@ -54,6 +54,7 @@ public class CerberusClientSpringBootConfiguration {
      *
      * @see <a href="http://engineering.nike.com/cerberus/docs/user-guide/quick-start">Cerberus
      *     Quick Start Guide</a>
+     * @return Cerberus client object
      */
     @Bean
     public CerberusClient cerberusClient() {

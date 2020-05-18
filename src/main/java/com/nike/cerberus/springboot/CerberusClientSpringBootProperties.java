@@ -38,22 +38,22 @@ public class CerberusClientSpringBootProperties {
     private String url;
     private String region;
 
-    /** Cerberus URL, e.g. https://test.cerberus.example.com */
+    /** @return url : Cerberus URL, e.g. https://test.cerberus.example.com */
     public String getUrl() {
         return url;
     }
 
-    /** Cerberus URL, e.g. https://test.cerberus.example.com */
+    /** @param url : Cerberus URL, e.g. https://test.cerberus.example.com */
     public void setUrl(String url) {
         this.url = url;
     }
 
-    /** Cerberus region for sts auth, e.g. us-west-2 */
+    /** @return region : Cerberus region for sts auth, e.g. us-west-2 */
     public String getRegion() {
         return region;
     }
 
-    /** Cerberus region for sts auth, e.g. us-west-2 */
+    /** @param region : Cerberus region for sts auth, e.g. us-west-2 */
     public void setRegion(String region) {
         this.region = region;
     }
