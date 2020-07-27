@@ -40,6 +40,34 @@ To learn more about Cerberus, please see the [Cerberus website](http://engineeri
     String secret = secrets.get("propname");  // property name from Cerberus dashboard
 ```
 
+# Development
+
+### Run Integration Tests
+First, make sure you have a safe deposit box created in the cerberus environment you plan to run the tests against.
+The credentials you plan to use to execute the tests with must have write permissions to this SDB. 
+
+Second, make sure the following environment variables are set before running the Cerberus Spring Boot Client integration tests:
+
+``` bash
+    export CERBERUS_URL=https://example.cerberus.com
+    export CERBERUS_REGION=us-west-2
+    export SDB_ROOT_PATH=app/integration-test-sdb/
+```
+
+Then, make sure AWS credentials have been loaded into the default credential profile or a cerberus token has been exported
+to the "CERBERUS_TOKEN" environment variable. 
+
+One method of obtaining credentials is by running [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds):
+
+```bash
+    gimme-aws-creds
+```
+
+Next, in the project directory run:
+```gradle
+    ./gradlew integration
+```
+
 <a name="license"></a>
 ## License
 
@@ -50,5 +78,3 @@ Cerberus client is released under the [Apache License, Version 2.0](http://www.a
 
 [license]:LICENSE.txt
 [license img]:https://img.shields.io/badge/License-Apache%202-blue.svg
-
-[toc]:#table_of_contents
