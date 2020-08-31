@@ -20,6 +20,7 @@ repositories {
 
 configurations.all {
     resolutionStrategy {
+        force "com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.11.1"
         force "ch.qos.logback:logback-core:1.2.3"
         force "ch.qos.logback:logback-classic:1.2.3"
         force "net.sourceforge.pmd:pmd-core:6.21.0"
@@ -42,7 +43,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-autoconfigure:2.2.9.RELEASE"
 
     // Cerberus dependencies
-    compile "com.nike:cerberus-client:7.3.0"
+    compile "com.nike:cerberus-client:7.3.1"
 
     // Test dependencies
     testRuntime 'org.slf4j:slf4j-simple:1.7.25'
