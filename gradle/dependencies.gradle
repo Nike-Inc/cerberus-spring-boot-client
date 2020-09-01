@@ -42,7 +42,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-autoconfigure:2.2.9.RELEASE"
 
     // Cerberus dependencies
-    compile "com.nike:cerberus-client:7.3.0"
+    compile "com.nike:cerberus-client:7.3.1"
 
     // Test dependencies
     testRuntime 'org.slf4j:slf4j-simple:1.7.25'
