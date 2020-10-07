@@ -39,7 +39,7 @@ configurations.all {
 dependencies {
 
     // Spring dependencies
-    compile "org.springframework.boot:spring-boot-autoconfigure:2.2.9.RELEASE"
+    compile "org.springframework.boot:spring-boot-autoconfigure:2.3.4.RELEASE"
 
     // Cerberus dependencies
     compile "com.nike:cerberus-client:7.3.1"
