@@ -2,7 +2,7 @@
 
 [ ![Download](https://api.bintray.com/packages/nike/maven/cerberus-spring-boot-client/images/download.svg) ](https://bintray.com/nike/maven/cerberus-spring-boot-client/_latestVersion)
 [![][travis img]][travis]
-[![Coverage Status](https://coveralls.io/repos/github/Nike-Inc/cerberus-spring-boot-client/badge.svg?branch=master)](https://coveralls.io/github/Nike-Inc/cerberus-spring-boot-client)
+[![codecov](https://codecov.io/gh/Nike-Inc/cerberus-spring-boot-client/branch/master/graph/badge.svg)](https://codecov.io/gh/Nike-Inc/cerberus-spring-boot-client)
 [![][license img]][license]
 
 A Spring Boot client library for Cerberus for Spring Boot applications.
