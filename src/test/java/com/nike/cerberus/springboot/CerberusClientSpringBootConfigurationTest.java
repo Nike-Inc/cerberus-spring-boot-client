@@ -22,34 +22,39 @@ public class CerberusClientSpringBootConfigurationTest {
 
     @Test
     public void testForExceptionOnMissingMissingRegion() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            CerberusClientSpringBootProperties configProps = new CerberusClientSpringBootProperties();
-            configProps.setUrl("https://test.cerberus.example.com");
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setUrl("https://test.cerberus.example.com");
 
-            new CerberusClientSpringBootConfiguration(configProps)
-                    .cerberusClient();
-        });
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
     }
 
     @Test
-    public void testForExceptionOnMissingURL()  {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            CerberusClientSpringBootProperties configProps = new CerberusClientSpringBootProperties();
-            configProps.setRegion("us-west-2");
+    public void testForExceptionOnMissingURL() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setRegion("us-west-2");
 
-            new CerberusClientSpringBootConfiguration(configProps)
-                    .cerberusClient();
-        });
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
     }
 
     @Test
-    public void testCerberusClientSpringBootConfiguration()  {
-        Assertions.assertDoesNotThrow(() -> {
-            CerberusClientSpringBootProperties configProps = new CerberusClientSpringBootProperties();
-            configProps.setRegion("us-west-2");
-            configProps.setUrl("https://test.cerberus.example.com");
-            new CerberusClientSpringBootConfiguration(configProps)
-                    .cerberusClient();
-        });
+    public void testCerberusClientSpringBootConfiguration() {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setRegion("us-west-2");
+                    configProps.setUrl("https://test.cerberus.example.com");
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
     }
 }
