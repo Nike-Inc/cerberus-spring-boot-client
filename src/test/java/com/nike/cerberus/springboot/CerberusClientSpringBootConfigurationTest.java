@@ -16,13 +16,45 @@
 
 package com.nike.cerberus.springboot;
 
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 public class CerberusClientSpringBootConfigurationTest {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testForExceptionOnMissingRequiredProperty() throws Exception {
-        new CerberusClientSpringBootConfiguration(new CerberusClientSpringBootProperties())
-                .cerberusClient();
+    @Test
+    public void testForExceptionOnMissingMissingRegion() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setUrl("https://test.cerberus.example.com");
+
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
+    }
+
+    @Test
+    public void testForExceptionOnMissingURL() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setRegion("us-west-2");
+
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
+    }
+
+    @Test
+    public void testCerberusClientSpringBootConfiguration() {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setRegion("us-west-2");
+                    configProps.setUrl("https://test.cerberus.example.com");
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
     }
 }

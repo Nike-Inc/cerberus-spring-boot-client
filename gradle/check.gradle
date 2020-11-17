@@ -43,6 +43,10 @@ cobertura {
 }
 test.finalizedBy(project.tasks.coberturaReport)
 
+test {
+    useJUnitPlatform()
+}
+
 task findbugsHtml {
     group = "Verification"
     description = "Creates a human readable Findbugs report"
