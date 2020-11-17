@@ -21,13 +21,27 @@ import org.junit.jupiter.api.*;
 public class CerberusClientSpringBootConfigurationTest {
 
     @Test
-    public void testForExceptionOnMissingMissingRegion() {
+    public void testForExceptionOnMissingRegion() {
         Assertions.assertThrows(
                 IllegalArgumentException.class,
                 () -> {
                     CerberusClientSpringBootProperties configProps =
                             new CerberusClientSpringBootProperties();
                     configProps.setUrl("https://test.cerberus.example.com");
+
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
+    }
+
+    @Test
+    public void testForExceptionOnBlankRegion() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setUrl("https://test.cerberus.example.com");
+                    configProps.setRegion("");
 
                     new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
                 });
@@ -41,6 +55,20 @@ public class CerberusClientSpringBootConfigurationTest {
                     CerberusClientSpringBootProperties configProps =
                             new CerberusClientSpringBootProperties();
                     configProps.setRegion("us-west-2");
+
+                    new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
+                });
+    }
+
+    @Test
+    public void testForExceptionOnBlankURL() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    CerberusClientSpringBootProperties configProps =
+                            new CerberusClientSpringBootProperties();
+                    configProps.setRegion("us-west-2");
+                    configProps.setUrl("");
 
                     new CerberusClientSpringBootConfiguration(configProps).cerberusClient();
                 });
