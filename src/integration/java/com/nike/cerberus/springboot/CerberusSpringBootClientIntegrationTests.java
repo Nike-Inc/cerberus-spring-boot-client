@@ -16,8 +16,8 @@
 
 package com.nike.cerberus.springboot;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.fieldju.commons.EnvUtils;
 import com.nike.cerberus.client.CerberusClient;
@@ -32,6 +32,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class CerberusSpringBootClientIntegrationTests {
 
@@ -43,7 +46,7 @@ public class CerberusSpringBootClientIntegrationTests {
     private Map<String, String> secretData;
     private ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-    @Before
+    @BeforeEach
     public void before() {
         EnvUtils.getRequiredEnv("CERBERUS_URL");
         EnvUtils.getRequiredEnv("CERBERUS_REGION");
@@ -62,7 +65,7 @@ public class CerberusSpringBootClientIntegrationTests {
         executorService.submit(() -> app.run());
     }
 
-    @After
+    @AfterEach
     public void after() {
         app.shutdown();
     }
