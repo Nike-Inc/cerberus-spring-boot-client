@@ -16,8 +16,8 @@
 
 package com.nike.cerberus.springboot;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.fieldju.commons.EnvUtils;
 import com.nike.cerberus.client.CerberusClient;
