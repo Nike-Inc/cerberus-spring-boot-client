@@ -1,6 +1,5 @@
 # Cerberus Spring Boot Client
 
-[ ![Download](https://api.bintray.com/packages/nike/maven/cerberus-spring-boot-client/images/download.svg) ](https://bintray.com/nike/maven/cerberus-spring-boot-client/_latestVersion)
 ![][gh actions img]
 [![codecov](https://codecov.io/gh/Nike-Inc/cerberus-spring-boot-client/branch/master/graph/badge.svg)](https://codecov.io/gh/Nike-Inc/cerberus-spring-boot-client)
 [![][license img]][license]
@@ -9,10 +8,24 @@ A Spring Boot client library for Cerberus for Spring Boot applications.
 
 To learn more about Cerberus, please see the [Cerberus website](http://engineering.nike.com/cerberus/).
 
+## Publishing Notice 3/17/2021
+As of spring 2021, JFrog has decided to sunset Bintray and JCenter.
+Due to this decision, we are pausing our open source publishing of the Cerberus Spring Boot Client.
+However, we will still be updating the source code and making new GitHub releases.
+
+In order to build the jar yourself, run this command:
+```bash
+./gradlew assemble
+```
+
+The jar will be located in `./build/libs/`.
+
+For any questions or concerns, create a Github issue [here](https://github.com/Nike-Inc/cerberus-spring-boot-client/issues/new).
+
 ## Quickstart for EC2
 
 1. Start with the [quick start guide](http://engineering.nike.com/cerberus/docs/user-guide/quick-start).
-2. Add the [Cerberus Spring Boot Client dependency](https://bintray.com/nike/maven/cerberus-spring-boot-client) to your build (e.g. Maven, Gradle)
+2. Add the Cerberus Spring Boot Client dependency to your build (e.g. Artifactory) or build the jar
 3. Provide an authentication mechanism.
    - For local development it is easiest to export a `CERBERUS_TOKEN` that you copied from the Cerberus dashboard.
      When running in AWS, your application will not need this environmetal variable, instead it will automatically 
