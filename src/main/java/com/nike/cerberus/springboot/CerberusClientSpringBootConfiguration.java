@@ -41,7 +41,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(CerberusClientSpringBootProperties.class)
 public class CerberusClientSpringBootConfiguration {
 
-    private CerberusClientSpringBootProperties cerberusClientProperties;
+    private CerberusClientSpringBootProperties cerberusClientProperties; // NOPMD
 
     @Autowired
     public CerberusClientSpringBootConfiguration(
@@ -59,7 +59,7 @@ public class CerberusClientSpringBootConfiguration {
     @Bean
     public CerberusClient cerberusClient() {
         String url = cerberusClientProperties.getUrl();
-        String region = cerberusClientProperties.getRegion();
+        String region = cerberusClientProperties.getRegion(); // NOPMD
         if (url == null || url.isEmpty()) {
             throw new IllegalArgumentException(
                     "cerberus.url setting is required! "

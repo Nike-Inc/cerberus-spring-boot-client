@@ -24,6 +24,7 @@ configurations.all {
         force "ch.qos.logback:logback-classic:1.2.3"
         force "net.sourceforge.pmd:pmd-core:6.21.0"
         force "net.sourceforge.pmd:pmd-java:6.21.0"
+        force "com.fasterxml.jackson.core:jackson-databind:2.12.1"
 
         dependencySubstitution {
             substitute module("org.mortbay.jetty:jetty") with module("org.eclipse.jetty:jetty-server:9.4.33.v20201020")
@@ -42,7 +43,11 @@ dependencies {
     compile "org.springframework.boot:spring-boot-autoconfigure:2.3.4.RELEASE"
 
     // Cerberus dependencies
-    compile "com.nike:cerberus-client:7.3.2"
+    implementation('com.nike:cerberus-client'){
+        version {
+            branch = 'master'
+        }
+    }
 
     // Test dependencies
     testRuntime 'org.slf4j:slf4j-simple:1.7.25'
