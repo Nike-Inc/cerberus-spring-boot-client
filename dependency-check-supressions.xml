@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes><![CDATA[
+      file name: cache-api-1.1.0.jar
+      ]]></notes>
+        <packageUrl regex="true">^pkg:maven/javax\.cache/cache\-api@.*$</packageUrl>
+        <cve>CVE-2020-36448</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+   file name: resilience4j-cache-1.5.0.jar
+   ]]></notes>
+        <packageUrl regex="true">^pkg:maven/io\.github\.resilience4j/resilience4j\-cache@.*$</packageUrl>
+        <cve>CVE-2020-36448</cve>
+    </suppress>
+</suppressions>
