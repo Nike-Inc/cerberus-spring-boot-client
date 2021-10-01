@@ -22,8 +22,9 @@ sourceSets {
 }
 
 task integration(type: Test, description: 'Runs integration tests') {
-    testClassesDir = sourceSets.integration.output.classesDir
+    testClassesDirs = sourceSets.integration.output.classesDirs
     classpath = sourceSets.integration.runtimeClasspath
+    outputs.upToDateWhen { false }
 }
 
 dependencies {
@@ -31,11 +32,14 @@ dependencies {
     integrationCompile configurations.testCompile
     integrationCompile sourceSets.test.output
     integrationCompile 'com.fieldju:commons:1.1.0'
-    integrationCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+    integrationCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
     integrationRuntime configurations.testRuntime
+
+    integrationAnnotationProcessor "org.projectlombok:lombok:1.18.20"
 }
 
 integration {
+    useJUnitPlatform()
     testLogging {
         showStandardStreams = true
     }
