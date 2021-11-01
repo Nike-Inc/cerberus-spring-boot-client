@@ -22,7 +22,7 @@ configurations.all {
     resolutionStrategy {
         force "ch.qos.logback:logback-core:1.2.6"
         force "ch.qos.logback:logback-classic:1.2.6"
-        force "net.sourceforge.pmd:pmd-core:6.39.0"
+        force "net.sourceforge.pmd:pmd-core:6.40.0"
         force "net.sourceforge.pmd:pmd-java:6.39.0"
         force "com.fasterxml.jackson.core:jackson-databind:2.12.1"
 
