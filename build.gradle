@@ -15,6 +15,17 @@
  */
 
 buildscript {
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.cyclonedx:cyclonedx-gradle-plugin:1.4.1"
+    }
+
     apply from: file('gradle/buildscript.gradle'), to: buildscript
 }
 
@@ -22,6 +33,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: "com.diffplug.gradle.spotless"
+apply plugin: "org.cyclonedx.bom"
 
 spotless {
     java {
