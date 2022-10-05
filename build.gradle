@@ -15,6 +15,13 @@
  */
 
 buildscript {
+    ext {
+        versions = [
+            logback: '1.4.1',
+            jetty: '11.0.12',
+            pmd: '6.50.0'
+        ]
+    }
 
     repositories {
         maven {
@@ -23,7 +30,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.cyclonedx:cyclonedx-gradle-plugin:1.4.1"
+        classpath "com.cyclonedx:cyclonedx-gradle-plugin:1.5.0"
     }
 
     apply from: file('gradle/buildscript.gradle'), to: buildscript
