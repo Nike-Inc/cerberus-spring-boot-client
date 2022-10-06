@@ -30,10 +30,10 @@ jobs:
       - name: Test with Gradle
         run: ./gradlew check
       - name: Upload coverage report to CodeCov
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v3.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          file: ./build/reports/cobertura/coverage.xml # optional
+          files: ./build/reports/cobertura/coverage.xml # optional
           fail_ci_if_error: true # optional (default = false)
           verbose: true
       - name: Slack notification when master build fails
