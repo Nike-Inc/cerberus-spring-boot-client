@@ -24,7 +24,7 @@ configurations.all {
         force "ch.qos.logback:logback-classic:$versions.logback"
         force "net.sourceforge.pmd:pmd-core:$versions.pmd"
         force "net.sourceforge.pmd:pmd-java:$versions.pmd"
-        force "com.fasterxml.jackson.core:jackson-databind:2.13.4"
+        force "com.fasterxml.jackson.core:jackson-databind:2.13.4.2"
 
         dependencySubstitution {
             substitute module("org.mortbay.jetty:jetty") with module("org.eclipse.jetty:jetty-server:$versions.jetty")
