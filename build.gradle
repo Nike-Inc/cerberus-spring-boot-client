@@ -19,7 +19,7 @@ buildscript {
         versions = [
             logback: '1.4.3',
             jetty: '11.0.12',
-            pmd: '6.50.0'
+            pmd: '6.51.0'
         ]
     }
 
