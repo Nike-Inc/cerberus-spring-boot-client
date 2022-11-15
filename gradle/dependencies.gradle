@@ -24,7 +24,14 @@ configurations.all {
         force "ch.qos.logback:logback-classic:$versions.logback"
         force "net.sourceforge.pmd:pmd-core:$versions.pmd"
         force "net.sourceforge.pmd:pmd-java:$versions.pmd"
-        force "com.fasterxml.jackson.core:jackson-databind:2.13.4.2"
+        force "com.fasterxml.jackson.core:jackson-databind:2.14.0"
+        force "com.amazonaws:aws-java-sdk-core:1.12.339"
+        force "com.amazonaws:aws-java-sdk:1.12.339"
+        force "com.amazonaws:aws-java-sdk-sts:1.12.339"
+        force "com.google.code.gson:gson:2.10"
+        force "com.squareup.okhttp3:okhttp:4.10.0"
+        force 'com.squareup.okio:okio-jvm:3.2.0'
+
 
         dependencySubstitution {
             substitute module("org.mortbay.jetty:jetty") with module("org.eclipse.jetty:jetty-server:$versions.jetty")
@@ -40,14 +47,14 @@ configurations.all {
 dependencies {
 
     // Spring dependencies
-    compile "org.springframework.boot:spring-boot-autoconfigure:2.7.4"
+    compile "org.springframework.boot:spring-boot-autoconfigure:2.7.5"
 
     // Cerberus dependencies
     compile 'com.nike:cerberus-client:v7.4.6'
 
     // Test dependencies
     testCompile "org.junit.jupiter:junit-jupiter:5.9.1"
-    testCompile ("org.mockito:mockito-core:4.8.1") {
+    testCompile ("org.mockito:mockito-core:4.9.0") {
         exclude group: 'org.hamcrest'
     }
 }
