@@ -15,8 +15,17 @@
  */
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
+
+ext {
+    versions = [
+        logback: '1.4.4',
+        jetty: '11.0.12',
+        pmd: '6.51.0'
+    ]
+}
+
 
 configurations.all {
     resolutionStrategy {
