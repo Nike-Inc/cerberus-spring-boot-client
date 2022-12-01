@@ -27,7 +27,7 @@ configurations.all {
         force "com.fasterxml.jackson.core:jackson-databind:2.14.0"
         force "com.amazonaws:aws-java-sdk-core:1.12.339"
         force "com.amazonaws:aws-java-sdk:1.12.339"
-        force "com.amazonaws:aws-java-sdk-sts:1.12.339"
+        force "com.amazonaws:aws-java-sdk-sts:1.12.353"
         force "com.google.code.gson:gson:2.10"
         force "com.squareup.okhttp3:okhttp:4.10.0"
         force 'com.squareup.okio:okio-jvm:3.2.0'
