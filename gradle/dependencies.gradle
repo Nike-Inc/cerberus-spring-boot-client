@@ -25,7 +25,7 @@ configurations.all {
         force "net.sourceforge.pmd:pmd-core:$versions.pmd"
         force "net.sourceforge.pmd:pmd-java:$versions.pmd"
         force "com.fasterxml.jackson.core:jackson-databind:2.14.0"
-        force "com.amazonaws:aws-java-sdk-core:1.12.339"
+        force "com.amazonaws:aws-java-sdk-core:1.12.376"
         force "com.amazonaws:aws-java-sdk:1.12.339"
         force "com.amazonaws:aws-java-sdk-sts:1.12.339"
         force "com.google.code.gson:gson:2.10"
