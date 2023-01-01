@@ -18,7 +18,7 @@ buildscript {
     ext {
         versions = [
             logback: '1.4.4',
-            jetty: '11.0.12',
+            jetty: '11.0.13',
             pmd: '6.51.0'
         ]
     }
