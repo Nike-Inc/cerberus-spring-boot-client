@@ -53,7 +53,7 @@ dependencies {
     compile 'com.nike:cerberus-client:v7.4.6'
 
     // Test dependencies
-    testCompile "org.junit.jupiter:junit-jupiter:5.9.1"
+    testCompile "org.junit.jupiter:junit-jupiter:5.9.2"
     testCompile ("org.mockito:mockito-core:4.9.0") {
         exclude group: 'org.hamcrest'
     }
