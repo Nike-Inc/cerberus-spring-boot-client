@@ -37,7 +37,7 @@ configurations.all {
             substitute module("org.mortbay.jetty:jetty") with module("org.eclipse.jetty:jetty-server:$versions.jetty")
             substitute module("org.mortbay.jetty:jetty-util") with module("org.eclipse.jetty:jetty-util:$versions.jetty")
             substitute module("org.mortbay.jetty:jetty-http") with module("org.eclipse.jetty:jetty-http:$versions.jetty")
-            substitute module("dom4j:dom4j:1.6.1") with module("org.dom4j:dom4j:2.1.3")
+            substitute module("dom4j:dom4j:1.6.1") with module("org.dom4j:dom4j:2.1.4")
         }
     }
     exclude group: 'org.mortbay.jetty', module:'servlet-api-2.5'
